@@ -14,7 +14,7 @@
       <table class="table no-margin">
         <thead>
         <tr>
-          <th>Date</th>
+          <th style="min-width: 85px;">Date</th>
           <th>Event</th>
           <th>Projects</th>
           <th>Location</th>
