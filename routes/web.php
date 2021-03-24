@@ -10,6 +10,7 @@ Route::get('about-imi', 'FrontController@aboutimi');
 Route::get('legal-notice', 'FrontController@legalnotice');
 Route::get('privacy-policy', 'FrontController@privacypolicy');
 Route::get('assets-map', 'FrontController@assetsmap');
+Route::get('events', 'FrontController@events');
 
 // Authentication Routes...
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');

@@ -95,4 +95,10 @@ class FrontController extends Controller
         $asset_maps = AssetMap::all();
         return view('asset_map', compact('asset_maps'));
     }
+
+    public function events()
+    {
+        $events = \App\Calendar::where('end_date','>=',now())->orderBy('start_date')->limit(4)->get();
+        return view('events', compact('events'));
+    }
 }
