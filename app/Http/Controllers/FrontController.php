@@ -89,16 +89,4 @@ class FrontController extends Controller
 
       return view('privacy-policy', compact('policies', 'helps'));
     }
-
-    public function assetsmap()
-    {
-        $asset_maps = AssetMap::all();
-        return view('asset_map', compact('asset_maps'));
-    }
-
-    public function events()
-    {
-        $events = \App\Calendar::where('end_date','>=',now())->orderBy('start_date')->limit(4)->get();
-        return view('events', compact('events'));
-    }
 }

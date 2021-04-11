@@ -1,0 +1,47 @@
+@extends('layouts.plugin')
+
+@section('content')
+
+    <div id="root">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box box-violet">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Template Documents & Guidelines</h3>
+                </div>
+                <!-- /.box-header -->
+               <div class="box-body">
+                 <div class="table-responsive">
+                   <table class="table no-margin">
+                     <thead>
+                     <tr>
+                       <th>Publication Date</th>
+                       <th>Title</th>
+                       <th>Source</th>
+                     </tr>
+                     </thead>
+                     <tbody>
+
+                      @foreach($documents as $document)
+                        <tr>
+                          <td>{{ $document->publication_date }}</td>
+                          <td><a href="/admin/documents/{{ $document->id }}">{{ $document->title }}</a></td>
+                          <td>{{ $document->source }}</td>
+                        </tr>
+                      @endforeach
+
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer text-center">
+                  <a href="{{ route('admin.documents.index') }}" class="uppercase">View All Template Documents & Guidelines</a>
+                </div>
+                <!-- /.box-footer -->
+              </div>
+            </div>
+        </div>
+    </div>
+
+@endsection
