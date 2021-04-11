@@ -9,8 +9,21 @@ Route::get('disclaimer', 'FrontController@disclaimer');
 Route::get('about-imi', 'FrontController@aboutimi');
 Route::get('legal-notice', 'FrontController@legalnotice');
 Route::get('privacy-policy', 'FrontController@privacypolicy');
-Route::get('assets-map', 'FrontController@assetsmap');
-Route::get('events', 'FrontController@events');
+Route::get('assets-map', 'PluginsController@assetsmap');
+Route::group(['prefix' => 'plugins', 'as' => 'plugins.'], function () {
+    Route::get('/', 'PluginsController@index');
+    Route::get('asset-map', 'PluginsController@assetsmap');
+    Route::get('decision-tool', 'PluginsController@decisiontool');
+    Route::get('deliverables', 'PluginsController@deliverables');
+    Route::get('documents', 'PluginsController@documents');
+    Route::get('events', 'PluginsController@events');
+    Route::get('metrics', 'PluginsController@metrics');
+    Route::get('network-diagrams', 'PluginsController@networkdiagrams');
+    Route::get('projects', 'PluginsController@projects');
+    Route::get('publications', 'PluginsController@publications');
+    Route::get('schedule', 'PluginsController@schedule');
+    Route::get('tools', 'PluginsController@tools');
+});
 
 // Authentication Routes...
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');

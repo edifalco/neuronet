@@ -1,4 +1,4 @@
-@extends('layouts.embed')
+@extends('layouts.plugin')
 
 @section('content')
 {{--    <h3 class="page-title">Assets Map</h3>--}}

@@ -1,4 +1,4 @@
-@extends('layouts.embed')
+@extends('layouts.plugin')
 
 @section('content')
     <div class="box box-purple">
