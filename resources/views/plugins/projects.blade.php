@@ -1,62 +1,79 @@
+@inject('request', 'Illuminate\Http\Request')
 @extends('layouts.plugin')
 
 @section('content')
+    <h3 class="page-title">@lang('global.projects.title')
+        @can('project_create')
 
-    <div id="root">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="box box-pink">
-                  <div class="box-header with-border">
-                    <h3 class="box-title">Projects</h3>
+            <a href="{{ route('admin.projects.create') }}" class="btn btn-success">@lang('global.app_add_new')</a>
 
-                {{--    <div class="box-tools pull-right">--}}
-                {{--      <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>--}}
-                {{--      </button>--}}
-                {{--      <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>--}}
-                {{--    </div>--}}
-                  </div>
-                  <!-- /.box-header -->
-                  <div class="box-body">
-                    <ul class="products-list product-list-in-box">
+        @endcan
+    </h3>
+    @can('project_csv_import')
+        <p>
+        <ul class="list-inline">
+            <li><a href="{{ route('admin.projects.index') }}" style="{{ request('show_deleted') == 1 ? '' : 'font-weight: 700' }}">@lang('global.app_all')</a></li> |
+            <li><a href="{{ route('admin.projects.index') }}?show_deleted=1" style="{{ request('show_deleted') == 1 ? 'font-weight: 700' : '' }}">@lang('global.app_trash')</a></li>
+        </ul>
+        </p>
+    @endcan
 
-                      @foreach($projects as $project)
-                          @if($project->id != 24)
-                            <li class="item">
-                              <div class="product-img">
-                                <img src="/img/{{ $project->logo }}" alt="{{ $project->name }}">
-                              </div>
-                              <div class="product-info">
-                                <div class="project-name">
-                                    <a href="/admin/projects/{{ $project->id }}" class="product-title">{{ $project->name }}</a>
-                                    <span> - {{ $project->long_name }}</span>
-                                    <p class="project-title hidden">{{ $project->name }} - {{ $project->long_name }}</p>
-                                </div>
-                                <span class="product-description">
-                                      {{ $project->description }}
-                                </span>
-                                  <a href="/admin/partners/project/{{ $project->id }}" class="product-title">Partners</a>
-                                 / <a href="/admin/work_packages/project/{{ $project->id }}" class="product-title">Work Packages</a>
-                                 / <a href="/admin/publications/project/{{ $project->id }}" class="product-title">Publications</a>
-                                 / <a href="/admin/deliverables/project/{{ $project->id }}" class="product-title">Deliverables</a>
-                                 / <a href="/admin/asset_maps/project/{{ $project->id }}" class="product-title">Assets</a>
-                    {{--             / <a href="/admin/tools/project/{{ $project->id }}" class="product-title">Tools</a>--}}
-                                 / <a href="{{ $project->website }}" target="_blank" class="product-title">Website</a>
-                              </div>
-                            </li>
-                            <!-- /.item -->
-                          @endif
-                      @endforeach
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            @lang('global.app_list')
+        </div>
 
-                    </ul>
-                  </div>
-                  <!-- /.box-body -->
-                  <div class="box-footer text-center">
-                    <a href="{{ url('admin/projects') }}" class="uppercase">View All Projects</a>
-                  </div>
-                  <!-- /.box-footer -->
-                </div>
-            </div>
+        <div class="panel-body table-responsive">
+            <table class="table table-bordered table-striped ajaxTable @can('project_delete') @if ( request('show_deleted') != 1 ) dt-select @endif @endcan">
+                <thead>
+                <tr>
+                    @can('project_delete')
+                        @if ( request('show_deleted') != 1 )<th style="text-align:center;"><input type="checkbox" id="select-all" /></th>@endif
+                    @endcan
+
+                    <th>@lang('global.projects.fields.name')</th>
+                    <th>@lang('global.projects.fields.long_name')</th>
+                    <th>@lang('global.projects.fields.description')</th>
+                    <th>@lang('global.projects.fields.objectives')</th>
+                    <th>@lang('global.projects.fields.website')</th>
+                    <th>@lang('global.projects.fields.start-date')</th>
+                    <th>@lang('global.projects.fields.end-date')</th>
+                    <th>@lang('global.projects.fields.logo')</th>
+                    @if( request('show_deleted') == 1 )
+                        <th>&nbsp;</th>
+                    @else
+                        <th>&nbsp;</th>
+                    @endif
+                </tr>
+                </thead>
+            </table>
         </div>
     </div>
+@stop
 
+@section('javascript')
+    <script>
+        @can('project_delete')
+            @if ( request('show_deleted') != 1 ) window.route_mass_crud_entries_destroy = '{{ route('admin.projects.mass_destroy') }}'; @endif
+        @endcan
+        $(document).ready(function () {
+            window.dtDefaultOptions.ajax = '{!! route('admin.projects.index') !!}?show_deleted={{ request('show_deleted') }}';
+            window.dtDefaultOptions.columns = [@can('project_delete')
+                @if ( request('show_deleted') != 1 )
+            {data: 'massDelete', name: 'id', searchable: false, sortable: false},
+                    @endif
+                    @endcan{data: 'name', name: 'name'},
+                {data: 'long_name', name: 'long_name'},
+                {data: 'description', name: 'description'},
+                {data: 'objectives', name: 'objectives'},
+                {data: 'website', name: 'website'},
+                {data: 'start_date', name: 'start_date'},
+                {data: 'end_date', name: 'end_date'},
+                {data: 'logo', name: 'logo'},
+
+                {data: 'actions', name: 'actions', searchable: false, sortable: false}
+            ];
+            processAjaxTables();
+        });
+    </script>
 @endsection
