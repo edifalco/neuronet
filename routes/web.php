@@ -15,14 +15,18 @@ Route::group(['prefix' => 'plugins', 'as' => 'plugins.'], function () {
     Route::get('asset-map', 'PluginsController@assetsmap');
     Route::get('decision-tool', 'PluginsController@decisiontool');
     Route::get('deliverables', 'PluginsController@deliverables');
+    Route::get('/deliverables/project/{project}', ['uses' => 'PluginsController@deliverables', 'as' => 'plugins.deliverables.project']);
     Route::get('documents', 'PluginsController@documents');
     Route::get('events', 'PluginsController@events');
+    Route::get('/events/all_events/{all_events}', ['uses' => 'PluginsController@events', 'as' => 'plugins.events.all_events']);
     Route::get('metrics', 'PluginsController@metrics');
     Route::get('network-diagrams', 'PluginsController@networkdiagrams');
     Route::get('projects', 'PluginsController@projects');
     Route::get('publications', 'PluginsController@publications');
+    Route::get('/publications/project/{project}', ['uses' => 'PluginsController@publications', 'as' => 'plugins.publications.project']);
     Route::get('schedule', 'PluginsController@schedule');
     Route::get('tools', 'PluginsController@tools');
+    Route::get('/tools/project/{project}', ['uses' => 'PluginsController@tools', 'as' => 'plugins.tools.project']);
 });
 
 // Authentication Routes...
