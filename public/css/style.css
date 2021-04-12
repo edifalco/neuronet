@@ -395,7 +395,7 @@ a:focus {
 	display: grid;
 	grid-template-columns: repeat(659, 1fr);
 	grid-template-rows: repeat(32, 1fr);
-	background-image: url("/img/assets_map14.png");
+	background-image: url("/img/assets_map15.png");
 	width: 759px;
 	height: 654px;
 	background-repeat:no-repeat;
@@ -1315,25 +1315,6 @@ a:focus {
 }
 
 
-.taxonomies-non-clinical-eqipd-1 {
-    grid-column: 485 / 528;
-    grid-row: 17 / 18;
-    border: 1px solid transparent;
-    cursor: pointer;
-}
-.taxonomies-non-clinical-eqipd-1 .asset-title {
-    visibility: hidden;
-    background-color: white;
-    border: 1px solid #e5e5e5;
-    padding: 5px 10px;
-    position: absolute;
-    z-index: 1;
-}
-.taxonomies-non-clinical-eqipd-1:hover .asset-title {
-    visibility: visible;
-}
-
-
 .tools-clinical-aetionomy-1 {
     grid-column: 189 / 228;
     grid-row: 23 / 24;
@@ -1525,8 +1506,8 @@ a:focus {
 
 
 .tools-non-clinical-eqipd-11 {
-    grid-column: 80 / 119;
-    grid-row: 23 / 24;
+    grid-column: 70 / 100;
+    grid-row: 22 / 23;
     border: 1px solid transparent;
     cursor: pointer;
 }
@@ -1544,8 +1525,8 @@ a:focus {
 
 
 .tools-non-clinical-eqipd-12 {
-    grid-column: 109 / 146;
-    grid-row: 24 / 26;
+    grid-column: 100 / 129;
+    grid-row: 22 / 23;
     border: 1px solid transparent;
     cursor: pointer;
 }
@@ -1563,8 +1544,8 @@ a:focus {
 
 
 .tools-non-clinical-eqipd-13 {
-    grid-column: 119 / 160;
-    grid-row: 26 / 27;
+    grid-column: 85 / 118;
+    grid-row: 23 / 25;
     border: 1px solid transparent;
     cursor: pointer;
 }
@@ -1581,7 +1562,7 @@ a:focus {
 }
 
 .tools-non-clinical-imprind-14 {
-    grid-column: 65 / 110;
+    grid-column: 76 / 112;
     grid-row: 20 / 21;
     border: 1px solid transparent;
     cursor: pointer;
@@ -1600,8 +1581,8 @@ a:focus {
 
 
 .tools-non-clinical-phago-15 {
-    grid-column: 65 / 110;
-    grid-row: 21 / 23;
+    grid-column: 60 / 95;
+    grid-row: 21 / 22;
     border: 1px solid transparent;
     cursor: pointer;
 }
@@ -1619,8 +1600,8 @@ a:focus {
 
 
 .tools-non-clinical-ebisc2-16 {
-    grid-column: 161 / 190;
-    grid-row: 26 / 28;
+    grid-column: 230 / 258;
+    grid-row: 28 / 29;
     border: 1px solid transparent;
     cursor: pointer;
 }
@@ -1638,7 +1619,7 @@ a:focus {
 
 
 .tools-non-clinical-ebisc2-17 {
-    grid-column: 172 / 202;
+    grid-column: 205 / 232;
     grid-row: 28 / 29;
     border: 1px solid transparent;
     cursor: pointer;
@@ -1658,7 +1639,7 @@ a:focus {
 
 .tools-non-clinical-ebisc2-18 {
     grid-column: 204 / 232;
-    grid-row: 27 / 29;
+    grid-row: 27 / 28;
     border: 1px solid transparent;
     cursor: pointer;
 }
@@ -1676,7 +1657,7 @@ a:focus {
 
 
 .tools-non-clinical-ebisc2-19 {
-    grid-column: 210 / 240;
+    grid-column: 225 / 252;
     grid-row: 29 / 30;
     border: 1px solid transparent;
     cursor: pointer;
@@ -1690,6 +1671,100 @@ a:focus {
     z-index: 1;
 }
 .tools-non-clinical-ebisc2-19:hover .asset-title {
+    visibility: visible;
+}
+
+.tools-non-clinical-eqipd-23 {
+    grid-column: 119 / 153;
+    grid-row: 24 / 25;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+.tools-non-clinical-eqipd-23 .asset-title {
+    visibility: hidden;
+    background-color: white;
+    border: 1px solid #e5e5e5;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 1;
+}
+.tools-non-clinical-eqipd-23:hover .asset-title {
+    visibility: visible;
+}
+
+
+.tools-non-clinical-eqipd-24 {
+    grid-column: 111 / 143;
+    grid-row: 25 / 27;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+.tools-non-clinical-eqipd-24 .asset-title {
+    visibility: hidden;
+    background-color: white;
+    border: 1px solid #e5e5e5;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 1;
+}
+.tools-non-clinical-eqipd-24:hover .asset-title {
+    visibility: visible;
+}
+
+
+.tools-non-clinical-eqipd-25 {
+    grid-column: 144 / 180;
+    grid-row: 25 / 27;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+.tools-non-clinical-eqipd-25 .asset-title {
+    visibility: hidden;
+    background-color: white;
+    border: 1px solid #e5e5e5;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 1;
+}
+.tools-non-clinical-eqipd-25:hover .asset-title {
+    visibility: visible;
+}
+
+
+.tools-non-clinical-eqipd-26 {
+    grid-column: 144 / 174;
+    grid-row: 27 / 28;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+.tools-non-clinical-eqipd-26 .asset-title {
+    visibility: hidden;
+    background-color: white;
+    border: 1px solid #e5e5e5;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 1;
+}
+.tools-non-clinical-eqipd-26:hover .asset-title {
+    visibility: visible;
+}
+
+
+.tools-non-clinical-eqipd-27 {
+    grid-column: 174 / 204;
+    grid-row: 27 / 29;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+.tools-non-clinical-eqipd-27 .asset-title {
+    visibility: hidden;
+    background-color: white;
+    border: 1px solid #e5e5e5;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 1;
+}
+.tools-non-clinical-eqipd-27:hover .asset-title {
     visibility: visible;
 }
 
