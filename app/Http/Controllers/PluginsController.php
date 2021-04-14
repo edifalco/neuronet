@@ -259,74 +259,9 @@ class PluginsController extends Controller
 
     public function projects()
     {
-        if (request()->ajax()) {
-            $query = Project::query();
-            $template = 'actionsTemplate';
-            if(request('show_deleted') == 1) {
-
-                if (! Gate::allows('project_delete')) {
-                    return abort(401);
-                }
-                $query->onlyTrashed();
-                $template = 'restoreTemplate';
-            }
-            $query->select([
-                'projects.id',
-                'projects.name',
-                'projects.long_name',
-                'projects.description',
-                'projects.objectives',
-                'projects.website',
-                'projects.start_date',
-                'projects.end_date',
-                'projects.logo',
-            ])->Where('id', '!=', '24')->get();
-            $table = Datatables::of($query);
-
-            $table->setRowAttr([
-                'data-entry-id' => '{{$id}}',
-            ]);
-            $table->addColumn('massDelete', '&nbsp;');
-            $table->addColumn('actions', '&nbsp;');
-            $table->editColumn('actions', function ($row) use ($template) {
-                $gateKey  = 'project_';
-                $routeKey = 'admin.projects';
-
-                return view($template, compact('row', 'gateKey', 'routeKey'));
-            });
-            $table->editColumn('name', function ($row) {
-                return $row->name ? $row->name : '';
-            });
-            $table->editColumn('long_name', function ($row) {
-                return $row->long_name ? $row->long_name : '';
-            });
-            $table->editColumn('description', function ($row) {
-                return $row->description ? $row->description : '';
-            });
-            $table->editColumn('objectives', function ($row) {
-                return $row->objectives ? $row->objectives : '';
-            });
-            $table->editColumn('website', function ($row) {
-                if($row->website) { return '<a href="'. $row->website .'" target="_blank">' . $row->website . '</a>'; };
-            });
-            $table->editColumn('start_date', function ($row) {
-                return $row->start_date ? $row->start_date : '';
-            });
-            $table->editColumn('end_date', function ($row) {
-                return $row->end_date ? $row->end_date : '';
-            });
-            $table->editColumn('logo', function ($row) {
-                if($row->logo) { return '<a href="'. asset(env('UPLOAD_PATH').'/img/' . $row->logo) .'" target="_blank"><img src="'. asset(env('UPLOAD_PATH').'/img/thumb/' . $row->logo) .'"/>'; };
-            });
-
-            $table->rawColumns(['actions','massDelete','logo', 'website']);
-
-            return $table->make(true);
-        }
-
-        return view('plugins.projects');
+        $projects = \App\Project::all()->sortBy('name');
+        return view('plugins.projects', compact('projects'));
     }
-
 
     public function publications($proj_id=null)
     {
