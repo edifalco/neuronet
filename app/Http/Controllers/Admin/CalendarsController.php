@@ -49,10 +49,8 @@ class CalendarsController extends Controller
             ]);
 
             $all_events = request('all_events');
-            if($all_events == 1) {
-              $query->orderBy('start_date')->get();
-            } else {
-              $query->where('end_date','>=',now())->orderBy('start_date');
+            if($all_events != 1) {
+              $query->where('calendars.end_date','>=',now());
             }
 
             $table = Datatables::of($query);

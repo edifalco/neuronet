@@ -50,9 +50,7 @@ class PartnersController extends Controller
               $projId =[$project_id];
               $query->whereHas('projects', function($q) use($projId) {
                   $q->whereIn('id', $projId);
-              })->orderBy('name')->get();
-            } else {
-              $query->orderBy('name')->get();
+              })->get();
             }
 
             $table = Datatables::of($query);
