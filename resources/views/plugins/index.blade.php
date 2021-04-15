@@ -19,6 +19,7 @@
                     <a target="_blank" href="/plugins/events">Events Plugin</a><br>
                     <a target="_blank" href="/plugins/metrics">Metrics Plugin</a><br>
                     <a target="_blank" href="/plugins/network-diagrams">Network Diagrams Plugin</a><br>
+                    <a target="_blank" href="/plugins/partners">Partners Plugin</a><br>
                     <a target="_blank" href="/plugins/projects">Projects Plugin</a><br>
                     <a target="_blank" href="/plugins/publications">Publications Plugin</a><br>
                     <a target="_blank" href="/plugins/schedule">Schedule Plugin</a><br>
