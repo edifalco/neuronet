@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Calendar;
 use App\Deliverable;
 use App\Document;
+use App\Partner;
 use App\Project;
 use App\Publication;
 use App\Tool;
@@ -255,6 +256,80 @@ class PluginsController extends Controller
     public function networkdiagrams()
     {
         return view('plugins.network');
+    }
+
+    public function partners($proj_id=null)
+    {
+        if (request()->ajax()) {
+            $query = Partner::query();
+            $query->with("projects");
+            $query->with("type_of_institution");
+            $query->with("country");
+            $template = 'actionsTemplate';
+            if(request('show_deleted') == 1) {
+
+                if (! Gate::allows('partner_delete')) {
+                    return abort(401);
+                }
+                $query->onlyTrashed();
+                $template = 'restoreTemplate';
+            }
+            $query->select([
+                'partners.id',
+                'partners.name',
+                'partners.type_of_institution_id',
+                'partners.country_id',
+            ]);
+
+            $project_id = request('project_id');
+            if( $project_id != null) {
+                $projId =[$project_id];
+                $query->whereHas('projects', function($q) use($projId) {
+                    $q->whereIn('id', $projId);
+                })->orderBy('name')->get();
+            } else {
+                $query->orderBy('name')->get();
+            }
+
+            $table = Datatables::of($query);
+
+            $table->setRowAttr([
+                'data-entry-id' => '{{$id}}',
+            ]);
+            $table->addColumn('massDelete', '&nbsp;');
+            $table->addColumn('actions', '&nbsp;');
+            $table->editColumn('actions', function ($row) use ($template) {
+                $gateKey  = 'partner_';
+                $routeKey = 'admin.partners';
+
+                return view($template, compact('row', 'gateKey', 'routeKey'));
+            });
+            $table->editColumn('name', function ($row) {
+                return $row->name ? $row->name : '';
+            });
+            $table->editColumn('projects.name', function ($row) {
+                if(count($row->projects) == 0) {
+                    return '';
+                }
+
+                return '<span class="label label-info label-many">' . implode('</span><span class="label label-info label-many"> ',
+                        $row->projects->pluck('name')->toArray()) . '</span>';
+            });
+            $table->editColumn('type_of_institution.name', function ($row) {
+                return $row->type_of_institution ? $row->type_of_institution->name : '';
+            });
+            $table->editColumn('country.title', function ($row) {
+                return $row->country ? $row->country->title : '';
+            });
+
+            $table->rawColumns(['actions','massDelete','projects.name']);
+
+            return $table->make(true);
+        }
+
+        $projects = \App\Project::all();
+        $project_name = \App\Project::where('id',$proj_id)->value('name');
+        return view('plugins.partners', compact('projects','project_name'));
     }
 
     public function projects()

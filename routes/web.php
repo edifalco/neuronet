@@ -21,6 +21,8 @@ Route::group(['prefix' => 'plugins', 'as' => 'plugins.'], function () {
     Route::get('/events/all_events/{all_events}', ['uses' => 'PluginsController@events', 'as' => 'plugins.events.all_events']);
     Route::get('metrics', 'PluginsController@metrics');
     Route::get('network-diagrams', 'PluginsController@networkdiagrams');
+    Route::get('partners', 'PluginsController@partners');
+    Route::get('/partners/project/{project}', ['uses' => 'PluginsController@partners', 'as' => 'plugins.partners.project']);
     Route::get('projects', 'PluginsController@projects');
     Route::get('publications', 'PluginsController@publications');
     Route::get('/publications/project/{project}', ['uses' => 'PluginsController@publications', 'as' => 'plugins.publications.project']);
