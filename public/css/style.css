@@ -1958,6 +1958,26 @@ a:focus {
     visibility: visible;
 }
 
+.whats-an-asset {
+    margin-top: -60px;
+    /*padding-left: 20px;*/
+    font-weight: bold;
+    color: rgba(58,9,97,1);
+}
+.whats-an-asset:hover {
+    color: rgba(229,14,106,1);
+    cursor: pointer;
+}
+.whats-an-asset-modal {
+    background-color: white;
+    border: 1px solid #e5e5e5;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 1;
+    margin-top: -460px;
+    width: 740px;
+}
+
 .highlight-img {
     padding-top: 2%;
 }
