@@ -30,9 +30,11 @@
             <div class="whats-an-asset">What is an asset?</div>
             <div class="whats-an-asset-modal hidden">
                 <div class="modal-header">
-                    <h3 class="modal-title">Criteria for ‘Asset’ definition<img class="modal-img pull-right" src="/img/Neuronet_Logo.png"></h3>
+                    <h3 class="modal-title">Defining an asset<img class="modal-img pull-right" src="/img/Neuronet_Logo.png"></h3>
                 </div>
                 <div class="modal-body">
+                    <p>In order to consistently build the asset map across all IMI neurodegeneration projects, NEURONET has agreed on a common definition of what an asset is.</p>
+
                     <ul>
                         <li><strong>Existence.</strong> An asset must exist. It cannot be a planned or future outcome, or something that no longer
                             exists (e.g. a cohort that existed but is not actively being followed up after project completion)</li>
@@ -41,9 +43,7 @@
                         <li><strong>Tangibility.</strong> Data sets, tools, guidelines, a white paper, software, etc. can be considered assets if they can
                             be accessed, incorporated, consulted, or leveraged in some way. "Expertise in XYZ" in general is not
                             tangible, therefore not considered an asset. Also, if a research outcome is not accessible at all, it may not
-                            be considered an asset either, as it would not meet the usefulness criteria described below.</li>
-                            <ul><li>There is a grey area where we could be flexible. For instance, a “site network” would meet the
-                                tangibility criteria if they use common practices, team dynamics, common protocols, etc.</li></ul>
+                            be considered an asset either, as it would not meet the usefulness criteria described below. On the other hand, a site network would meet the tangibility criteria if they use common practices, team dynamics, common protocols, etc.</li>
                         <li><strong>Re-usability.</strong> Assets should be amenable for re-use by others. If something is so ad hoc that it can only be
                             useful for the originating project, it may not be considered an asset.</li>
                         <li><strong>Provenance.</strong> Assets need to be defined by basic parameters such as description, ownership, authorship,
