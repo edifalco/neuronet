@@ -29,6 +29,7 @@
               dataTable.addColumn({ type: 'string', role: 'tooltip', 'p': {'html': true} });
               dataTable.addColumn({ type: 'date', id: 'Start' });
               dataTable.addColumn({ type: 'date', id: 'End' });
+              dataTable.addColumn({ type: 'string', role: 'tooltip', id: 'link', 'p': {'html': true} });
               dataTable.addRows([
                 @foreach ($scheduleprojects as $project)
                   [ '{{ $loop->index+1 }}',
@@ -55,7 +56,8 @@
                     </div>`,
 
                     new Date({{ date('Y, m, d', strtotime($project->start_date)) }}),
-                    new Date({{ date('Y, m, d', strtotime($project->end_date)) }}) ],
+                    new Date({{ date('Y, m, d', strtotime($project->end_date)) }}),
+                      '{{ $project->website }}'],
                 @endforeach
               ]);
 
@@ -80,6 +82,28 @@
                   colors: ['#3a0961', '#e50e6a'],
                   backgroundColor: '#fff'
                 };
+
+              google.visualization.events.addListener(chart, 'select', function () {
+                  var selection = chart.getSelection();
+                  if (selection.length > 0) {
+                      window.open(dataTable.getValue(selection[0].row, 5), '_blank');
+                      // location.reload();
+                  }
+              });
+
+              google.visualization.events.addListener(chart, 'onmouseover', function () {
+                  var selection = chart.getSelection();
+                  if (selection.length > 0) {
+                      document.getElementById('timeline').style.cursor = 'pointer';
+                  }
+              });
+
+              google.visualization.events.addListener(chart, 'onmouseout', function () {
+                  var selection = chart.getSelection();
+                  if (selection.length > 0) {
+                      document.getElementById('timeline').style.cursor = 'default';
+                  }
+              });
 
               chart.draw(dataTable, options);
               }
