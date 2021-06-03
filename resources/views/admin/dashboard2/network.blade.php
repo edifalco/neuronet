@@ -32,7 +32,7 @@
       <div class="chart tab-pane active" id="projects">
         <div class="box-body">
             <div class="table-responsive network-participants-image">
-                <h4>Network diagram of projects in the portfolio</h4>
+                <h4>Network diagram of projects in the portfolio (<a href="/admin/network_diagrams/projects">click to interact</a>)</h4>
                 <p class="network-diagram hidden">The figure represents the network of IMI projects that form the IMI neurodegeneration portfolio. Each node in the network represents an IMI project. The lines between the nodes are weighted to show the number of organisations that participate in both projects – the wider the connection, the higher the number of shared organisations between projects.</p>
                 <a href="/admin/network_diagrams/projects"><img class="img-responsive" src="/img/projects.png" alt="Network diagram of projects in the portfolio"></a>
             </div>
@@ -43,7 +43,7 @@
       <div class="chart tab-pane" id="participants">
         <div class="box-body">
             <div class="table-responsive network-participants-image">
-                <h4>Network diagram of organisations participating in the portfolio</h4>
+                <h4>Network diagram of organisations participating in the portfolio (<a href="/admin/network_diagrams/participants">click to interact</a>)</h4>
                 <p class="network-diagram hidden">The figure represents the network of unique partner organisations that participate in the 18 projects of the IMI neurodegeneration portfolio (N=239). Each organisation is represented by a single node, where the size of each node reflects how well connected an organisation is with all other organisations in the network. The figure shows that there are a relatively small number of organisations that are the key nodes in the network. The lines connecting the nodes are coloured to represent the number of projects that connect individual organisations. The majority of connections in the network are coloured pink indicating that 2 organisations are connected through participation in a single project. The connections between organisations that participate together in multiple projects are indicated in blue.</p>
                 <a href="/admin/network_diagrams/participants"><img class="img-responsive network-participants-image" src="/img/participants.png" alt="Network diagram of organisations participating in the portfolio"></a>
             </div>
