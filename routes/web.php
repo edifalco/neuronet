@@ -29,6 +29,8 @@ Route::group(['prefix' => 'plugins', 'as' => 'plugins.'], function () {
     Route::get('schedule', 'PluginsController@schedule');
     Route::get('tools', 'PluginsController@tools');
     Route::get('/tools/project/{project}', ['uses' => 'PluginsController@tools', 'as' => 'plugins.tools.project']);
+    Route::get('/interactive-projects', 'PluginsController@interactive_projects')->name('plugins.interactive.projects');
+    Route::get('/interactive-partners', 'PluginsController@interactive_partners')->name('plugins.interactive.partners');
 });
 
 // Authentication Routes...
@@ -62,6 +64,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::get('/network_diagrams/projects', 'Admin\NetworkDiagramsController@projects')->name('network_diagrams.projects');
     Route::get('/network_diagrams/participants', 'Admin\NetworkDiagramsController@participants')->name('network_diagrams.participants');
     Route::get('/network_diagrams/publications', 'Admin\NetworkDiagramsController@publications')->name('network_diagrams.publications');
+    Route::get('/network_maps/projects', 'Admin\NetworkMapsController@projects')->name('network_maps.projects');
+    Route::get('/network_maps/partners', 'Admin\NetworkMapsController@partners')->name('network_maps.partners');
 
     Route::resource('activities', 'Admin\ActivitiesController');
     Route::post('activities_mass_destroy', ['uses' => 'Admin\ActivitiesController@massDestroy', 'as' => 'activities.mass_destroy']);

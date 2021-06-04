@@ -15,7 +15,7 @@
 		<div class="col-md-4">
             @include('admin.dashboard2.asset_map')
             @include('admin.dashboard2.decision_tool')
-{{--            @include('admin.dashboard2.network')--}}
+            @include('admin.dashboard2.network')
             @include('admin.dashboard2.interactive_network')
             @include('admin.dashboard2.calendar2')
 {{--            @include('admin.dashboard2.key_areas')--}}

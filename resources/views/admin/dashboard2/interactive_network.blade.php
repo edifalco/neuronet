@@ -1,9 +1,6 @@
 <div class="nav-tabs-custom" style="cursor: move;">
     <!-- Tabs within a box -->
     <ul class="nav nav-tabs pull-right ui-sortable-handle">
-{{--      <li class="active"><a href="#projects" data-toggle="tab" aria-expanded="true">Projects</a></li>--}}
-{{--      <li class=""><a href="#participants" data-toggle="tab" aria-expanded="true">Participants</a></li>--}}
-{{--      <li class=""><a href="#publications" data-toggle="tab" aria-expanded="false">Publications</a></li>--}}
       <li class="pull-left header">Interactive Network Maps</li>
       <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="true">
@@ -28,7 +25,7 @@
         <div class="box-body">
             <div class="table-responsive network-participants-image">
                 <h4>Interactive Projects</h4>
-                <a href="/admin/network_diagrams/projects"><img class="img-responsive" src="/img/projects.png" alt="Network diagram of projects in the portfolio"></a>
+                <a href="/admin/network_maps/projects"><img class="img-responsive" src="/img/interactive_projects.png" alt="Network diagram of projects in the portfolio"></a>
             </div>
         </div>
         <!-- /.box-body -->
@@ -38,7 +35,7 @@
         <div class="box-body">
             <div class="table-responsive network-participants-image">
                 <h4>Interactive Partners (Academic)</h4>
-                <a href="/admin/network_diagrams/participants"><img class="img-responsive network-participants-image" src="/img/participants.png" alt="Network diagram of organisations participating in the portfolio"></a>
+                <a href="/admin/network_maps/partners"><img class="img-responsive network-participants-image" src="/img/interactive_partners.png" alt="Network diagram of organisations participating in the portfolio"></a>
             </div>
         </div>
         <!-- /.box-body -->
