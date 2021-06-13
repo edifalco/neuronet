@@ -3,31 +3,31 @@
 @section('content')
     <h3 class="page-title">Asset Map</h3>
 
-    <div class="asset-image">
-        @foreach($asset_maps as $asset_map)
-            <div class="{{ $asset_map->target }} || " data-toggle="modal" data-target="#{{ $asset_map->target }}"><span class="asset-title">{{ $asset_map->title }}</span></div>
-        @endforeach
-    </div>
+            <div class="asset-image">
+                @foreach($asset_maps as $asset_map)
+                    <div class="{{ $asset_map->target }} || " data-toggle="modal" data-target="#{{ $asset_map->target }}"><span class="asset-title">{{ $asset_map->title }}</span></div>
+                @endforeach
+            </div>
 
-    <!-- Modal -->
-    @foreach($asset_maps as $asset_map)
-        <div class="modal fade" id="{{ $asset_map->target }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel"><img class="modal-img" src="/img/{{ $asset_map->project->logo }}">{{ $asset_map->title }}</h4>
-                    </div>
-                    <div class="modal-body">
-                        {!! $asset_map->body !!}
+            <!-- Modal -->
+            @foreach($asset_maps as $asset_map)
+                <div class="modal fade" id="{{ $asset_map->target }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel"><img class="modal-img" src="/img/{{ $asset_map->project->logo }}">{{ $asset_map->title }}</h4>
+                            </div>
+                            <div class="modal-body">
+                                {!! $asset_map->body !!}
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    @endforeach
+            @endforeach
+
     <div class="row">
         <div class="col-xs-12">
-            <div class="whats-an-asset">What is an asset?</div>
             <div class="whats-an-asset-modal hidden">
                 <div class="modal-header">
                     <h3 class="modal-title">Defining an asset<img class="modal-img pull-right" src="/img/Neuronet_Logo.png"></h3>
@@ -53,6 +53,7 @@
                     </ul>
                 </div>
             </div>
+            <div class="whats-an-asset">What is an asset?</div>
         </div>
     </div>
 
