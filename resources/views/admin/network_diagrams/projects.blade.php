@@ -17,7 +17,7 @@
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-7">
                                 <div class="jumbotron">
-                                    <p style="padding-right: 4%;padding-left: 4%;">The figure represents the network of IMI projects that form the IMI neurodegeneration portfolio. Each node in the network represents an IMI project. The lines between the nodes are weighted to show the number of organisations that participate in both projects – the wider the connection, the higher the number of shared organisations between projects.</p>
+                                    <p style="padding-right: 4%;padding-left: 4%;">The figure represents the network of IMI projects that form the IMI neurodegeneration portfolio. Each node in the network represents an IMI project.</p>
                                     <p style="padding-right: 4%;padding-left: 4%;">Click and drag on a pink circle to highlight a project and see the connections it has between other projects.</p>
                                 </div>
                             </div>
