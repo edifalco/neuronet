@@ -63,7 +63,7 @@
 
                 var options = {
                   //title: 'Rate the Day on a Scale of 1 to 10',
-                  height: 764,
+                  height: 802,
                   width: 600,
                   hAxis: {
                     format: 'yyyy',
