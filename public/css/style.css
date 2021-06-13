@@ -2110,6 +2110,8 @@ a:focus {
 
 .whats-an-asset {
     margin-top: -60px;
+    padding-left: 2px;
+    width: 107px;
     /*padding-left: 20px;*/
     font-weight: bold;
     color: rgba(58,9,97,1);
@@ -2124,7 +2126,7 @@ a:focus {
     padding: 5px 10px;
     position: absolute;
     z-index: 1;
-    margin-top: -460px;
+    margin-top: -530px;
     width: 740px;
 }
 

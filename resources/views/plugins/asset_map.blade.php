@@ -25,7 +25,6 @@
     @endforeach
     <div class="row">
         <div class="col-xs-12">
-            <div class="whats-an-asset">What is an asset?</div>
             <div class="whats-an-asset-modal hidden">
                 <div class="modal-header">
                     <h3 class="modal-title">Defining an asset<img class="modal-img pull-right" src="/img/Neuronet_Logo.png"></h3>
@@ -51,6 +50,7 @@
                     </ul>
                 </div>
             </div>
+            <div class="whats-an-asset">What is an asset?</div>
         </div>
     </div>
 
