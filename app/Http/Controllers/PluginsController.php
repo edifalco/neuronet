@@ -491,4 +491,24 @@ class PluginsController extends Controller
         $project_name = \App\Project::where('id',$proj_id)->value('name');
         return view('plugins.tools', compact('projects','project_name'));
     }
+
+    public function interactive_projects()
+    {
+        return view('plugins.interactive_projects');
+    }
+
+    public function all_partners()
+    {
+        return view('plugins.all_partners');
+    }
+
+    public function interactive_partners()
+    {
+        return view('plugins.interactive_partners');
+    }
+
+    public function efpia_partners()
+    {
+        return view('plugins.efpia_partners');
+    }
 }

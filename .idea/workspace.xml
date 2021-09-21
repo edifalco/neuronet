@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ab1970ca-8914-4797-93e9-aa780334f45c" name="Default Changelist" comment="">
+    <list default="true" id="ab1970ca-8914-4797-93e9-aa780334f45c" name="Default Changelist" comment="Modify links in Network diagrams in dashboard and modify network diagram pages">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/partials/head.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/head.blade.php" afterDir="false" />
     </list>
     <list id="acd62b11-9a2e-44e1-8e64-e535d21de9bb" name="Open access to index and show methods for projects, Assets, Calendars, Deliverables, Documents, Partners, Projects, Publications, Tools and Work Packages" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,11 +17,22 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="develop" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
     <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="GitRewordedCommitMessages">
+    <option name="commitMessagesMapping">
+      <RewordedCommitMessageMapping>
+        <option name="originalMessage" value="Modify links in Network diagrams in dashboard and modify network diagram pages" />
+        <option name="rewordedMessage" value="Modify links in Network diagrams in dashboard and modify network diagram pages" />
+      </RewordedCommitMessageMapping>
+    </option>
+    <option name="currentCommit" value="1" />
+    <option name="onto" value="4289724919959877925ab749ae95942d98436ac2" />
   </component>
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
@@ -152,7 +162,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/layouts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/plugins" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
@@ -162,11 +172,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/plugins" />
+      <recent name="$PROJECT_DIR$/resources/views/admin/network_diagrams" />
       <recent name="$PROJECT_DIR$/resources/views/layouts" />
       <recent name="$PROJECT_DIR$/resources/views" />
       <recent name="$PROJECT_DIR$/resources/views/admin" />
-      <recent name="$PROJECT_DIR$/app/Http/Requests/Admin" />
-      <recent name="$PROJECT_DIR$/app/Http/Controllers/Admin" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -216,20 +226,11 @@
       <workItem from="1611853758978" duration="25365000" />
       <workItem from="1612615943102" duration="9000" />
       <workItem from="1612633012938" duration="10856000" />
-    </task>
-    <task id="LOCAL-00001" summary="Removed side menu and created the topbar-only menu">
-      <created>1610276500909</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1610276500909</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Removed side menu and created the topbar-only menu">
-      <created>1610276658992</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1610276658992</updated>
+      <workItem from="1623757942283" duration="902000" />
+      <workItem from="1625502881919" duration="1479000" />
+      <workItem from="1632244788086" duration="11307000" />
+      <workItem from="1632765383068" duration="3966000" />
+      <workItem from="1633032292188" duration="1011000" />
     </task>
     <task id="LOCAL-00003" summary="Create CRUD in admin to manage the Highlight Metrics module">
       <created>1610277051873</created>
@@ -511,7 +512,70 @@
       <option name="project" value="LOCAL" />
       <updated>1613326043362</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="Revert &quot;Fix what is an asset comment on asset map plugin and module&quot;&#10;&#10;This reverts commit d38ce44b">
+      <created>1623623184041</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1623623184041</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Fix asset map image in the dashboard">
+      <created>1623623873878</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1623623873878</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Fix height in schedule module in the dashboard">
+      <created>1623624250366</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1623624250366</updated>
+    </task>
+    <task id="LOCAL-00046" summary="Modify links in Network diagrams in dashboard and modify network diagram pages">
+      <created>1632251870664</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1632251870665</updated>
+    </task>
+    <task id="LOCAL-00047" summary="Modify links in Network diagrams in dashboard and modify network diagram pages">
+      <created>1632333254941</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1632333254941</updated>
+    </task>
+    <task id="LOCAL-00048" summary="Modify links in Network diagrams in dashboard and modify network diagram pages">
+      <created>1632341636982</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1632341636984</updated>
+    </task>
+    <task id="LOCAL-00049" summary="Modify links in Network diagrams in dashboard and modify network diagram pages">
+      <created>1632341653791</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1632341653791</updated>
+    </task>
+    <task id="LOCAL-00050" summary="Modify links in Network diagrams in dashboard and modify network diagram pages">
+      <created>1632770240604</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1632770240614</updated>
+    </task>
+    <task id="LOCAL-00051" summary="Modify links in Network diagrams in dashboard and modify network diagram pages">
+      <created>1633032478354</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1633032478355</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TodoView">
@@ -577,10 +641,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <confirmRemoveEmptyChangelist value="2" />
-    <MESSAGE value="Add Assets and Publications links and remove Tools link in Projects module in the dashboard" />
-    <MESSAGE value="Changes in menu name and title section of assets" />
-    <MESSAGE value="Change link order in the project module in the dashboard" />
-    <MESSAGE value="Arrange images network diagram module in the dashboard" />
     <MESSAGE value="Change Network diagram menu on dashboard so it displays the diagram name in the menu" />
     <MESSAGE value="Removed bold on project name in publications module in the dashboard" />
     <MESSAGE value="Removed activity tab from the project show view" />
@@ -602,6 +662,10 @@
     <MESSAGE value="Change Neuronet Website for Neuronet Project in main menu" />
     <MESSAGE value="Remove html tags in the assets tab in projects show CRUD" />
     <MESSAGE value="Integrate Twitter cards" />
-    <option name="LAST_COMMIT_MESSAGE" value="Integrate Twitter cards" />
+    <MESSAGE value="Revert &quot;Fix what is an asset comment on asset map plugin and module&quot;&#10;&#10;This reverts commit d38ce44b" />
+    <MESSAGE value="Fix asset map image in the dashboard" />
+    <MESSAGE value="Fix height in schedule module in the dashboard" />
+    <MESSAGE value="Modify links in Network diagrams in dashboard and modify network diagram pages" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modify links in Network diagrams in dashboard and modify network diagram pages" />
   </component>
 </project>

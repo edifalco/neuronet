@@ -10,17 +10,17 @@
                         <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4" style="padding-right: 4%;padding-left: 4%;">
                                 <img style="height: 40px;" src="/img/Neuronet_Logo.png" alt="Neuronet Logo">
-                                <h4><strong>Interactive project map</strong></h4>
-                                <p>This map represents the network of projects in the IMI neurodegeneration (ND) portfolio. Each node in the network represents a single project.</p>
-                                <p>By clicking, touching or dragging a project node, you can see how it is connected to other projects. These connections demonstrate that two projects work with the same organisations or institutions.</p>
+                                <h4><strong>Interactive participant map (All)</strong></h4>
+                                <p>This map represents the network of all the organisations who participate in the IMI neurodegenerative (ND) portfolio.</p>
+                                <p>By clicking, touching or dragging a participant node, you can see how it is connected to other participants. These connections demonstrate that two organisations work on the same project (or projects) in the IMI ND portfolio.</p>
                                 <p>You can pinch or use your mouse wheel to zoom in and out of the map.</p>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-                                <iframe loading="lazy" src="/plugins/interactive-projects" width="870" height="700"></iframe>
+                                <iframe loading="lazy" src="/plugins/all-partners" width="870" height="700"></iframe>
                             </div>
                         </div>
                     </div>
-                </div>
+                </div
                 <!-- /.box-body -->
             </div>
         </div>

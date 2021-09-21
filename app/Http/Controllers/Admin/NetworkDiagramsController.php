@@ -11,9 +11,19 @@ class NetworkDiagramsController extends Controller
         return view('admin.network_diagrams.projects');
     }
 
-    public function participants()
+    public function participantsAll()
     {
-        return view('admin.network_diagrams.participants');
+        return view('admin.network_diagrams.participants_all');
+    }
+
+    public function participantsEfpia()
+    {
+        return view('admin.network_diagrams.participants_efpia');
+    }
+
+    public function participantsAcademic()
+    {
+        return view('admin.network_diagrams.participants_academic');
     }
 
     public function publications()
