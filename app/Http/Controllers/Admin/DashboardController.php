@@ -40,7 +40,7 @@ class DashboardController extends Controller
         $scheduleprojects = \App\Project::Where('id', '!=', '24')->orderBy('start_date')->get();
         //dd($scheduleprojects);
         //exit;
-        $events = \App\Calendar::where('end_date','>=',now())->orderBy('start_date')->limit(4)->get();
+        $events = \App\Calendar::where('end_date','>=',today())->orderBy('start_date')->limit(4)->get();
 
         //colors
         //Purple: "rgba(155,109,235,1)"
