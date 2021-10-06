@@ -24,7 +24,8 @@ class StoreToolsRequest extends FormRequest
     {
         return [
           'name' => 'min:3|max:191|required',
-          'project_id' => 'required',
+          'projects' => 'required',
+          'projects.*' => 'exists:projects,id',
           'publication_date' => 'required|date_format:'.config('app.date_format'),
           'type_of_data_available' => 'min:3|max:191|required',
           'description' => 'required',

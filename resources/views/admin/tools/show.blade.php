@@ -17,8 +17,12 @@
                             <td field-key='name'>{{ $tool->name }}</td>
                         </tr>
                         <tr>
-                            <th>@lang('global.tools.fields.project')</th>
-                            <td field-key='project'>{{ $tool->project->name ?? '' }}</td>
+                            <th>@lang('global.tools.fields.projects')</th>
+                            <td field-key='projects'>
+                                @foreach ($tool->projects as $singleProjects)
+                                    <span class="label label-info label-many">{{ $singleProjects->name }}</span>
+                                @endforeach
+                            </td>
                         </tr>
                         <tr>
                             <th>@lang('global.tools.fields.publication-date')</th>
