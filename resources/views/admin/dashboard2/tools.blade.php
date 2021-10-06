@@ -16,7 +16,7 @@
                      <tr>
                        <th>Publication Date</th>
                        <th>Tool Name</th>
-                       <th>Project</th>
+                       <th>Projects</th>
                      </tr>
                      </thead>
                      <tbody>
@@ -25,7 +25,11 @@
                         <tr>
                           <td>{{ $tool->publication_date }}</td>
                           <td><a href="/admin/tools/{{ $tool->id }}">{{ $tool->name }}</a></td>
-                          <td>{{ $tool->project->name }}</td>
+                          <td>
+                              @foreach ($tool->projects as $singleProjects)
+                                  <span class="label label-info label-many">{{ $singleProjects->name }}</span>
+                              @endforeach
+                          </td>
                         </tr>
                       @endforeach
 

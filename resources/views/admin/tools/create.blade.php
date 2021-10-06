@@ -8,7 +8,7 @@
         <div class="panel-heading">
             @lang('global.app_create')
         </div>
-        
+
         <div class="panel-body">
             <div class="row">
                 <div class="col-xs-12 form-group">
@@ -24,12 +24,18 @@
             </div>
             <div class="row">
                 <div class="col-xs-12 form-group">
-                    {!! Form::label('project_id', trans('global.tools.fields.project').'*', ['class' => 'control-label']) !!}
-                    {!! Form::select('project_id', $projects, old('project_id'), ['class' => 'form-control select2', 'required' => '']) !!}
+                    {!! Form::label('projects', trans('global.tools.fields.projects').'*', ['class' => 'control-label']) !!}
+                    <button type="button" class="btn btn-primary btn-xs" id="selectbtn-projects">
+                        {{ trans('global.app_select_all') }}
+                    </button>
+                    <button type="button" class="btn btn-primary btn-xs" id="deselectbtn-projects">
+                        {{ trans('global.app_deselect_all') }}
+                    </button>
+                    {!! Form::select('projects[]', $projects, old('projects'), ['class' => 'form-control select2', 'multiple' => 'multiple', 'id' => 'selectall-projects' , 'required' => '']) !!}
                     <p class="help-block"></p>
-                    @if($errors->has('project_id'))
+                    @if($errors->has('projects'))
                         <p class="help-block">
-                            {{ $errors->first('project_id') }}
+                            {{ $errors->first('projects') }}
                         </p>
                     @endif
                 </div>
@@ -94,7 +100,7 @@
                     @endif
                 </div>
             </div>
-            
+
         </div>
     </div>
 
@@ -112,13 +118,21 @@
             moment.updateLocale('{{ App::getLocale() }}', {
                 week: { dow: 1 } // Monday is the first day of the week
             });
-            
+
             $('.date').datetimepicker({
                 format: "{{ config('app.date_format_moment') }}",
                 locale: "{{ App::getLocale() }}",
             });
-            
+
+        });
+        $("#selectbtn-projects").click(function(){
+            $("#selectall-projects > option").prop("selected","selected");
+            $("#selectall-projects").trigger("change");
+        });
+        $("#deselectbtn-projects").click(function(){
+            $("#selectall-projects > option").prop("selected","");
+            $("#selectall-projects").trigger("change");
         });
     </script>
-            
+
 @stop

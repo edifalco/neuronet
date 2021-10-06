@@ -10,7 +10,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *
  * @package App
  * @property string $name
- * @property string $project
  * @property string $publication_date
  * @property string $type_of_data_available
  * @property text $description
@@ -21,7 +20,7 @@ class Tool extends Model
 {
     use SoftDeletes;
 
-    protected $fillable = ['name', 'publication_date', 'type_of_data_available', 'description', 'keywords', 'link', 'project_id'];
+    protected $fillable = ['name', 'publication_date', 'type_of_data_available', 'description', 'keywords', 'link'];
     protected $hidden = [];
     public static $searchable = [
         'name',
@@ -78,9 +77,9 @@ class Tool extends Model
         }
     }
 
-    public function project()
+    public function projects()
     {
-        return $this->belongsTo(Project::class, 'project_id')->withTrashed();
+        return $this->belongsToMany(Project::class, 'tool_project')->withTrashed();
     }
 
 }

@@ -297,7 +297,7 @@ return [
 		'title' => 'Tools',
 		'fields' => [
 			'name' => 'Name',
-			'project' => 'Project',
+			'projects' => 'Projects',
 			'publication-date' => 'Publication date',
 			'type-of-data-available' => 'Type of data available',
 			'description' => 'Description',

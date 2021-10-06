@@ -25,7 +25,7 @@ class ToolsController extends Controller
 
         if (request()->ajax()) {
             $query = Tool::query();
-            $query->with("project");
+            $query->with("projects");
             $template = 'actionsTemplate';
             if(request('show_deleted') == 1) {
 
@@ -38,7 +38,6 @@ class ToolsController extends Controller
             $query->select([
                 'tools.id',
                 'tools.name',
-                'tools.project_id',
                 'tools.publication_date',
                 'tools.type_of_data_available',
                 'tools.description',
@@ -48,7 +47,10 @@ class ToolsController extends Controller
 
             $project_id = request('project_id');
             if( $project_id != null) {
-              $query->where('project_id', $project_id)->get();
+                $projId =[$project_id];
+                $query->whereHas('projects', function($q) use($projId) {
+                    $q->whereIn('id', $projId);
+                })->get();
             }
 
             $table = Datatables::of($query);
@@ -67,8 +69,13 @@ class ToolsController extends Controller
             $table->editColumn('name', function ($row) {
                 return $row->name ? $row->name : '';
             });
-            $table->editColumn('project.name', function ($row) {
-                return $row->project ? $row->project->name : '';
+            $table->editColumn('projects.name', function ($row) {
+                if(count($row->projects) == 0) {
+                    return '';
+                }
+
+                return '<span class="label label-info label-many">' . implode('</span><span class="label label-info label-many"> ',
+                        $row->projects->pluck('name')->toArray()) . '</span>';
             });
             $table->editColumn('publication_date', function ($row) {
                 return $row->publication_date ? $row->publication_date : '';
@@ -86,12 +93,12 @@ class ToolsController extends Controller
                 if($row->link) { return '<a href="'. $row->link .'" target="_blank">' . $row->link . '</a>'; };
             });
 
-            $table->rawColumns(['actions','massDelete','link']);
+            $table->rawColumns(['actions','massDelete','link','projects.name']);
 
             return $table->make(true);
         }
 
-        $projects = \App\Project::all()->sortBy('name');
+        $projects = \App\Project::all();
         $project_name = \App\Project::where('id',$proj_id)->value('name');
         return view('admin.tools.index', compact('projects','project_name'));
     }
@@ -107,7 +114,7 @@ class ToolsController extends Controller
             return abort(401);
         }
 
-        $projects = \App\Project::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
+        $projects = \App\Project::get()->pluck('name', 'id');
 
         return view('admin.tools.create', compact('projects'));
     }
@@ -124,8 +131,7 @@ class ToolsController extends Controller
             return abort(401);
         }
         $tool = Tool::create($request->all());
-
-
+        $tool->projects()->sync(array_filter((array)$request->input('projects')));
 
         return redirect()->route('admin.tools.index');
     }
@@ -143,7 +149,7 @@ class ToolsController extends Controller
             return abort(401);
         }
 
-        $projects = \App\Project::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
+        $projects = \App\Project::get()->pluck('name', 'id');
 
         $tool = Tool::findOrFail($id);
 
@@ -164,7 +170,7 @@ class ToolsController extends Controller
         }
         $tool = Tool::findOrFail($id);
         $tool->update($request->all());
-
+        $tool->projects()->sync(array_filter((array)$request->input('projects')));
 
 
         return redirect()->route('admin.tools.index');
