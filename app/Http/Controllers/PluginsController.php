@@ -413,7 +413,9 @@ class PluginsController extends Controller
 
     public function schedule()
     {
-        $scheduleprojects = \App\Project::Where('id', '!=', '24')->orderBy('start_date')->get();
+        $scheduleprojects = \App\Project::where([
+            ['id', '!=', 24], ['id', '!=', 28], ['id', '!=', 29], ['id', '!=', 30],
+        ])->orderBy('start_date')->get();
         return view('plugins.schedule', compact('scheduleprojects'));
     }
 
