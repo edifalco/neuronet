@@ -50,7 +50,9 @@ class ProjectsController extends Controller
                 'projects.start_date',
                 'projects.end_date',
                 'projects.logo',
-            ])->Where('id', '!=', '24')->get();
+            ])->Where([
+                ['id', '!=', 24], ['id', '!=', 28], ['id', '!=', 29], ['id', '!=', 30],
+            ])->get();
             $table = Datatables::of($query);
 
             $table->setRowAttr([

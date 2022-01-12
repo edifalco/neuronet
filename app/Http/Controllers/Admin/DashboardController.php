@@ -36,8 +36,13 @@ class DashboardController extends Controller
         $projectsmetrics = \App\ProjectsMetric::all()->sortBy('name');
         $countriesmetrics = \App\CountriesMetric::all()->sortBy('name');
         $contactscategories = \App\ContactCategory::all();
-        $projects = \App\Project::all()->sortBy('name');
-        $scheduleprojects = \App\Project::Where('id', '!=', '24')->orderBy('start_date')->get();
+        //$projects = \App\Project::all()->sortBy('name');
+        $projects = \App\Project::where([
+            ['id', '!=', 24], ['id', '!=', 28], ['id', '!=', 29], ['id', '!=', 30],
+        ])->orderBy('name')->get();
+        $scheduleprojects = \App\Project::where([
+            ['id', '!=', 24], ['id', '!=', 28], ['id', '!=', 29], ['id', '!=', 30],
+        ])->orderBy('start_date')->get();
         //dd($scheduleprojects);
         //exit;
         $events = \App\Calendar::where('end_date','>=',today())->orderBy('start_date')->limit(4)->get();

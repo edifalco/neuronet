@@ -13,7 +13,6 @@
     <ul class="products-list product-list-in-box">
 
       @foreach($projects as $project)
-          @if($project->id != 24)
             <li class="item">
               <div class="product-img">
                 <img src="/img/{{ $project->logo }}" alt="{{ $project->name }}">
@@ -37,7 +36,6 @@
               </div>
             </li>
             <!-- /.item -->
-          @endif
       @endforeach
 
     </ul>
