@@ -56,7 +56,7 @@
                     @endcan
 
                     <th>@lang('global.tools.fields.name')</th>
-                    <th>@lang('global.tools.fields.project')</th>
+                    <th>@lang('global.tools.fields.projects')</th>
                     <th>@lang('global.tools.fields.publication-date')</th>
                     <th>@lang('global.tools.fields.type-of-data-available')</th>
                     <th>@lang('global.tools.fields.description')</th>
@@ -93,7 +93,7 @@
             {data: 'massDelete', name: 'id', searchable: false, sortable: false},
                     @endif
                     @endcan{data: 'name', name: 'name'},
-                {data: 'project.name', name: 'project.name'},
+                {data: 'projects.name', name: 'projects.name'},
                 {data: 'publication_date', name: 'publication_date'},
                 {data: 'type_of_data_available', name: 'type_of_data_available'},
                 {data: 'description', name: 'description'},
